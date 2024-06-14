@@ -1,6 +1,6 @@
 
 
-const listaPalabras = ['VERDE', 'AGUAS', 'FAUNA', 'ARBOL', 'SUELO', 'FLORA', 'FAUNA'];
+const listaPalabras = ['VERDE', 'FAUNA', 'ARBOL', 'SUELO', 'FLORA', 'FAUNA'];
 const state = {
   secret: listaPalabras[Math.floor(Math.random() * listaPalabras.length)],
   grid: Array(6).fill().map(() => Array(5).fill('')),
