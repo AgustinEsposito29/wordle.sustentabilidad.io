@@ -1,6 +1,9 @@
 html,
 body {
   background: var(--default);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
@@ -16,26 +19,28 @@ body {
   align-items: start;
   margin-top: 5rem;
   width: 100%;
-  height: 72vh;
+  height: auto;
+  padding: 1rem;
 }
 
 .grid {
   display: grid;
   grid-template-rows: repeat(6, auto);
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
 }
 
 .box {
-  width: 60px;
+  width: 100%;
+  max-width: 60px;
   height: 60px;
   border: 2px solid var(--empty);
-  margin: 4px;
   color: white;
   text-transform: uppercase;
   display: grid;
   place-items: center;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 2.4rem;
+  border-radius: 8px;
 }
 
 .box.empty {
@@ -70,15 +75,24 @@ body {
   color: white;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 0;
   position: relative;
 }
 
+.title-word-clone {
+  position: absolute;
+  left: calc(50% + 75px);
+  transform: rotate(25deg);
+  color: yellow;
+  font-size: 1.2rem;
+}
 
-.v-separator {
-  margin-left: 1rem;
-  margin-right: 1rem;
+hr {
+  border-style: solid;
+  border-color: var(--empty);
+  border-width: 1px;
+  margin: 1rem 0;
 }
 
 .footer {
@@ -89,33 +103,43 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.v-separator {
+  margin: 0 1rem;
+}
+
+.social-media-link {
+  display: flex;
+  fill: white;
+  width: 25px;
+  height: 25px;
+  margin-right: 0.75rem;
+}
 
 #keyboard {
-  /* background-color: yellow; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
   width: 100%;
+  margin-top: 1rem;
 }
 
 .row {
   display: flex;
   justify-content: center;
-  margin: 4px 0;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .key {
-  padding: 10px 20px;
+  padding: 12px 20px;
   margin: 4px;
-  font-size: 1.5em;
+  font-size: 1rem;
   border: none;
-  background-color: #3a3a3c;
+  background-color: var(--empty);
   color: white;
   cursor: pointer;
   border-radius: 4px;
-  flex: 1 1 auto;
+  flex: 1 1 calc(20% - 8px);
   text-align: center;
 }
 
@@ -123,62 +147,32 @@ body {
   background-color: #535353;
 }
 
-/* Media Queries */
-
-/* Cellphones */
 @media (max-width: 600px) {
-
   .title {
-    color: white;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    margin-bottom: 0;
-    position: relative;
+    font-size: 1.5rem;
   }
-  
 
-  
-.box {
-  width: 40px;
-  height: 40px;
-  font-size: 1.2rem;
-}
+  .box {
+    font-size: 1.5rem;
+    max-width: 40px;
+    height: 40px;
+  }
 
   .key {
-    /* background-color: red; */
-    padding: 4px 8px;
-    font-size: 1em;
-    margin: 0px 2px;
-  }
-
-  .row {
-    display: flex;
-    width: 100%;
-    /* background-color: yellow; */
-    justify-content: center;
-    margin: 4px 0;
-    flex-wrap: nowrap;
+    font-size: 0.9rem;
+    padding: 10px 15px;
   }
 }
 
-/* Tablets */
-@media (min-width: 601px) and (max-width: 900px) {
+@media (max-width: 400px) {
   .key {
-    padding: 10px 18px;
-    font-size: 1.3em;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .box {
+    font-size: 1.2rem;
+    max-width: 30px;
+    height: 30px;
   }
 }
-
-/* Desktop (default, no changes needed) */
-@media (min-width: 901px) {
-  .key {
-    padding: 10px 20px;
-    font-size: 1.5em;
-  }
-  #keyboard {
-    display: none;
-  }
-}
-
-
