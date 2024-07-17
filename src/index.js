@@ -1,3 +1,17 @@
+let modal = document.querySelector(".bg-modal");
+modal.addEventListener("click", (e)=>{
+  console.log('hola')
+  modal.classList.add('no-display')
+})
+
+
+window.onload = function() {
+  const modal = document.querySelector('.bg-modal');
+  setTimeout(() => {
+    modal.classList.add('show');
+  }, 500); // Delay to allow the page to load before showing the modal
+}
+
 const listaPalabras = ['VERDE', 'FAUNA', 'ARBOL', 'SUELO', 'FLORA', 'FAUNA'];
 const state = {
   secret: listaPalabras[Math.floor(Math.random() * listaPalabras.length)],
